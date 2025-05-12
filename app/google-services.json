@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "262098687337",
+    "project_id": "church-calendar-barrio-14",
+    "storage_bucket": "church-calendar-barrio-14.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262098687337:android:56e033e6718e33dcea99f8",
+        "android_client_info": {
+          "package_name": "com.example.calendarApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262098687337-vt01o8jr1vlhl2s3oev2gp299d5bf4lj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4LWHXhpRA4rTq4jmPf3-NkvfYPzU4QfY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262098687337-vt01o8jr1vlhl2s3oev2gp299d5bf4lj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
