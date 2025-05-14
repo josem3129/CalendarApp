@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">CalendarApp</string>
-    <string name="email">Email</string>
+    <string name="label_email">Email</string>
+    <string name="label_password">password</string>
+    <string name="label_login">Login</string>
+    <string name="label_register">Register</string>
+    <string name="empty_fields">Please enter email and password</string>
+    <string name="error_registration_failed">Registration failed: %s</string>
+    <string name="error_login_failed">Login failed</string>
+    <string name="error_email_already_registered">This email is already registered. Try logging in instead.</string>
+    <string name="error_invalid_email">Invalid email address</string>"
+    <string name="error_invalid_password">Password must be at least 6 characters long</string>
+    <string name="error_password_mismatch">Passwords do not match</string>
+    <string name="success_registration">Registration successful</string>
+    <string name="success_login">Login successful</string>
+    <string name="error_firebase_auth">Firebase Authentication Error: %s</string>"
+    <string name="error_firebase_firestore">Firebase Firestore Error: %s</string>
+    <string name="hint_enter_email">Enter your Email</string>
+    <string name="hint_enter_password">Enter Password</string>
+    <string name="error_empty_field">Email and password cannot be empty</string>
 </resources>

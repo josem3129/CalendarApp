@@ -57,10 +57,13 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    //implementation for firebase for database and auth
     implementation(platform("com.google.firebase:firebase-bom:33.13.0"))
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-firestore-ktx")
+    //backward compatibility for to use in older versions of android
     implementation("androidx.appcompat:appcompat:1.6.1")
+    //implementation for calendar view
     implementation("com.github.prolificinteractive:material-calendarview:1.4.3")
 }
 

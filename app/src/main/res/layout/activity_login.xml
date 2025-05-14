@@ -4,47 +4,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:padding="16dp"> <!-- Added padding for better spacing -->
+    android:padding="16dp">
 
     <!-- Email Label -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small" /> <!-- Optional: Use a text appearance -->
+        android:text= "@string/label_email"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
     <!-- Email EditText -->
     <EditText
         android:id="@+id/emailField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your email"/>
+        android:minHeight="48dp"
+        android:maxWidth="320dp"
+        android:hint="@string/hint_enter_email"
+        android:autofillHints="email"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="8dp"/>
+
 
     <!-- Password Label -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Password"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small" /> <!-- Optional: Use a text appearance -->
+        android:text="@string/label_password"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
     <!-- Password EditText -->
     <EditText
         android:id="@+id/passwordField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your password"  /> <!-- Added margin for spacing below -->
+        android:minHeight="48dp"
+        android:maxWidth="320dp"
+        android:hint="@string/hint_enter_password"
+        android:autofillHints="password"
+        android:inputType="textPassword"
+        android:layout_marginBottom="16dp"/>
 
+    <!-- Login Button -->
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_marginBottom="8dp" /> <!-- Added margin for spacing below -->
+        android:maxWidth="320dp"
+        android:text="@string/label_login"
+        android:layout_marginBottom="8dp" />
 
+    <!-- Register Button -->
     <Button
         android:id="@+id/registerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register" />
+        android:maxWidth="320dp"
+        android:text="@string/label_register"/>
 
 </LinearLayout>

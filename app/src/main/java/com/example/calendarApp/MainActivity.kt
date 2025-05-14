@@ -1,3 +1,6 @@
+// MainActivity.kt
+// This file contains the main activity for the calendar app
+// Is responsible for displaying hte calendar and handling user interactions
 package com.example.calendarApp
 
 import android.os.Bundle
@@ -7,22 +10,28 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
-import com.prolificinteractive.materialcalendarview.OnDateSelectedListener
 import java.time.LocalDate
 
+/**
+ * The main activity for the calendar app.
+ * This activity is responsible for displaying the calendar and handling user interactions.
+ * It also saves and retrieves announcements from the database.**/
 class MainActivity : AppCompatActivity() {
 
+    // Declare variables for the calendar view, authentication, and database.
     private lateinit var calendarView: MaterialCalendarView
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
     private lateinit var currentUserId: String
 
+    // This method is called when the activity is created.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Initialize the calendar view, authentication, and database.
+        // If the user is not logged in, they are redirected to the login screen.
         calendarView = findViewById(R.id.calendarView)
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
@@ -36,12 +45,13 @@ class MainActivity : AppCompatActivity() {
             currentUserId = user.uid
         }
 
-        calendarView.setOnDateChangedListener(OnDateSelectedListener { _, date, _ ->
+        calendarView.setOnDateChangedListener{ _, date, _ ->
             val selectedDate = LocalDate.of(date.year, date.month + 1, date.day)
             showAnnouncementDialog(selectedDate)
-        })
+        }
     }
 
+    // showAnnouncementDialog is called when the user selects a date in the calendar.
     private fun showAnnouncementDialog(date: LocalDate) {
         val input = EditText(this)
         AlertDialog.Builder(this)
@@ -54,7 +64,7 @@ class MainActivity : AppCompatActivity() {
             .setNegativeButton("Cancel", null)
             .show()
     }
-
+    // saveAnnouncement is called when the user clicks the "Save" button in the announcement dialog.
     private fun saveAnnouncement(date: LocalDate, text: String) {
         val announcement = hashMapOf(
             "userId" to currentUserId,
@@ -72,3 +82,6 @@ class MainActivity : AppCompatActivity() {
             }
     }
 }
+
+//Todo: Implement proper authentication flow after registration and login
+//Todo: add error handling for fetching announcements
