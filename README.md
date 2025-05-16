@@ -12,8 +12,6 @@ This is to help members of the bishopric not to have too many announcements duri
 
 youtube video: https://youtu.be/eeHl_qjYE7U
 
-[Software Demo Video](http://youtube.link.goes.here)
-
 # Development Environment
 
 Tools used
