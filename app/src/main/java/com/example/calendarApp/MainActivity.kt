@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         calendarView.setOnDateChangedListener{ _, date, _ ->
             val selectedDate = LocalDate.of(date.year, date.month + 1, date.day)
             showAnnouncementDialog(selectedDate)
+            loadAnnouncementsForDate(selectedDate)
         }
     }
 
@@ -80,6 +81,33 @@ class MainActivity : AppCompatActivity() {
             .addOnFailureListener {
                 Toast.makeText(this, "Failed to save announcement", Toast.LENGTH_SHORT).show()
             }
+    }
+
+    //Loading announcements from the database
+    private fun loadAnnouncementsForDate(date: LocalDate) {
+        db.collection("announcements")
+            .whereEqualTo("date", date.toString())
+            .get()
+            .addOnSuccessListener { result ->
+                val message = mutableListOf<String>()
+                var amountOfAnnouncements = 0
+                for (document in result) {
+                    val text = document.getString("text") ?: ""
+                    val user = document.getString("userId") ?: "unknown"
+                    message.add("$text (by $user)")
+                    amountOfAnnouncements += 1
+                }
+                val combined = if (message.isEmpty()){
+                    "No announcements for this date"
+                }else{
+                    "There are $amountOfAnnouncements Announcement on this date $date"
+                }
+                Toast.makeText(this, combined, Toast.LENGTH_LONG).show()
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "Failed to load announcements", Toast.LENGTH_SHORT).show()
+            }
+
     }
 }
 
