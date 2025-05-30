@@ -113,27 +113,6 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this@LoginActivity, "@String/error_login_failed", Toast.LENGTH_SHORT).show()}
     }
 
-    // register is called when the user clicks the register button.
-    // It validates the user's credentials and registers them if they are valid.
-    private fun register(email: String, password: String) {
-        if (email.isBlank() || password.isBlank()) {
-            Toast.makeText(this, "@String/error_empty_field", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnSuccessListener {
-                goToMainActivity()
-            }
-            .addOnFailureListener { exception ->
-                val message = if (exception.message?.contains("email address is already in use") == true) {
-                    "@string/error_email_already_registered"
-                } else {
-                    "@string/error_registration_failed"
-                }
-                Toast.makeText(this, message, Toast.LENGTH_LONG).show()
-            }
-    }
 
     private fun registerUpdate() {
         val intent = Intent(this, RegisterActivity::class.java)

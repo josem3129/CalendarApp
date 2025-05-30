@@ -10,14 +10,14 @@ purpose for creating this software.
 Calendar app is was created to help ward member of the church of Jesus Christ of ladder-day saints add announcements for any upcoming activities.
 This is to help members of the bishopric not to have too many announcements during sacrament meeting.
 
-youtube video: https://youtu.be/eeHl_qjYE7U
+youtube video: https://youtu.be/U_pW6qJQwFs
 
 # Development Environment
 
 Tools used
 Android Studio (IDE)
 Firebase Authentication (Backend Service for Authentication)
-Firebase Firestore (Backend Service for Data Storage)
+Firebase Firestorm (Backend Service for Data Storage)
 
 programming language
 Kotlin (Programming Language)

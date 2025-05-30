@@ -70,7 +70,7 @@ class CompleteProfileActivity : AppCompatActivity(){
             db.collection("users").document(userId).set(userInfo)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Profile saved", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this, MainActivity::class.java))
+                    startActivity(Intent(this, BottomNavActivity::class.java))
                     finish()
                 }
                 .addOnFailureListener{

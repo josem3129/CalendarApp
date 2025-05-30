@@ -92,7 +92,7 @@ class RegisterActivity : AppCompatActivity(){
         // This method is called when the user clicks the "Register" button.
         // redirects the user to the main activity calendar screen.
         private fun goToMainActivity(){
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, BottomNavActivity::class.java)
             startActivity(intent)
             finish()
         }
