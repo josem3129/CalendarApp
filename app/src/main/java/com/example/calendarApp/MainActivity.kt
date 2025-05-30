@@ -4,14 +4,23 @@
 package com.example.calendarApp
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import java.time.LocalDate
+private lateinit var recyclerView: RecyclerView
+private lateinit var adapter: AnnouncementAdapter
+private var announcements = mutableListOf<Announcement>()
+private lateinit var selectedDate: LocalDate
+
 
 /**
  * The main activity for the calendar app.
@@ -35,6 +44,14 @@ class MainActivity : AppCompatActivity() {
         calendarView = findViewById(R.id.calendarView)
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
+        recyclerView = findViewById(R.id.announcementList)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        adapter = AnnouncementAdapter(announcements)
+        recyclerView.adapter = adapter
+
+
+        val addButton = findViewById<Button>(R.id.addAnnouncementButton)
+        val selectedDateText = findViewById<TextView>(R.id.selectedDateText)
 
         val user = auth.currentUser
         if (user == null) {
@@ -43,24 +60,28 @@ class MainActivity : AppCompatActivity() {
             return
         } else {
             currentUserId = user.uid
+            println(user)
         }
 
         calendarView.setOnDateChangedListener{ _, date, _ ->
-            val selectedDate = LocalDate.of(date.year, date.month + 1, date.day)
-            showAnnouncementDialog(selectedDate)
+            selectedDate = LocalDate.of(date.year, date.month + 1, date.day)
+            selectedDateText.text = "Announcements for: $selectedDate"
             loadAnnouncementsForDate(selectedDate)
+        }
+        addButton.setOnClickListener {
+            showAddAnnouncementDialog()
         }
     }
 
-    // showAnnouncementDialog is called when the user selects a date in the calendar.
-    private fun showAnnouncementDialog(date: LocalDate) {
+    // showAddAnnouncementDialog is called when the user selects a date in the calendar.
+    private fun showAddAnnouncementDialog() {
         val input = EditText(this)
         AlertDialog.Builder(this)
-            .setTitle("Add Announcement for $date")
+            .setTitle("Add Announcement for $selectedDate")
             .setView(input)
             .setPositiveButton("Save") { _, _ ->
                 val text = input.text.toString()
-                saveAnnouncement(date, text)
+                saveAnnouncement(selectedDate, text)
             }
             .setNegativeButton("Cancel", null)
             .show()
@@ -72,7 +93,9 @@ class MainActivity : AppCompatActivity() {
             "date" to date.toString(),
             "text" to text
         )
-
+        // Save the announcement to the database "announcements" collection.
+        // If the save is successful, a toast message is displayed.
+        // If the save fails, an error message is displayed.
         db.collection("announcements")
             .add(announcement)
             .addOnSuccessListener {
@@ -89,20 +112,12 @@ class MainActivity : AppCompatActivity() {
             .whereEqualTo("date", date.toString())
             .get()
             .addOnSuccessListener { result ->
-                val message = mutableListOf<String>()
-                var amountOfAnnouncements = 0
-                for (document in result) {
-                    val text = document.getString("text") ?: ""
-                    val user = document.getString("userId") ?: "unknown"
-                    message.add("$text (by $user)")
-                    amountOfAnnouncements += 1
+                announcements.clear()
+                for (doc in result) {
+                    val announcement = doc.toObject(Announcement::class.java)
+                    announcements.add(announcement)
                 }
-                val combined = if (message.isEmpty()){
-                    "No announcements for this date"
-                }else{
-                    "There are $amountOfAnnouncements Announcement on this date $date"
-                }
-                Toast.makeText(this, combined, Toast.LENGTH_LONG).show()
+                adapter.notifyDataSetChanged()
             }
             .addOnFailureListener {
                 Toast.makeText(this, "Failed to load announcements", Toast.LENGTH_SHORT).show()
@@ -111,5 +126,3 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-//Todo: Implement proper authentication flow after registration and login
-//Todo: add error handling for fetching announcements

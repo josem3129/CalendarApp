@@ -13,6 +13,17 @@
         android:theme="@style/Theme.CalendarApp"
         tools:targetApi="31">
 
+        <activity android:name=".BottomNavActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
+
+        <!--Activity for Complete Profile-->
+        <activity android:name=".CompleteProfileActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
+
+        <!--Activity for Registration  and registration-->
+        <activity android:name=".RegisterActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
+
         <!--Activity for login and registration-->
         <activity android:name=".LoginActivity"
             android:exported="true"
@@ -22,6 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <!--Activity for the main calendar view-->
         <activity
             android:name=".MainActivity"

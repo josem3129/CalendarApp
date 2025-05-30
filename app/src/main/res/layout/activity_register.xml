@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--    Register view-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<!--        First name label and field-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text= "@string/first_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <EditText android:id="@+id/firstNameField"
+            android:hint="@string/juan"
+            android:inputType="textPersonName"
+            android:autofillHints="@string/juan"
+            android:minHeight="48dp"
+            android:maxWidth="320dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+<!--        Last name label and field-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text= "@string/last_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <EditText android:id="@+id/lastNameField"
+            android:hint="@string/martinez"
+            android:inputType="textPersonName"
+            android:autofillHints="@string/martinez"
+            android:minHeight="48dp"
+            android:maxWidth="320dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Email Label -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text= "@string/label_email"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <EditText android:id="@+id/emailField"
+            android:hint="@string/email_domain"
+            android:inputType="textEmailAddress"
+            android:autofillHints="email"
+            android:minHeight="48dp"
+            android:maxWidth="320dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!-- Password Label -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text= "@string/label_password"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <EditText android:id="@+id/passwordField"
+            android:hint="@string/hash"
+            android:inputType="textPassword"
+            android:autofillHints="password"
+            android:minHeight="48dp"
+            android:maxWidth="320dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Password Label -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text= "@string/conform_password"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <EditText android:id="@+id/confirmPasswordField"
+            android:hint="@string/hash"
+            android:inputType="textPassword"
+            android:autofillHints="Confirm password"
+            android:minHeight="48dp"
+            android:maxWidth="320dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+<!--        organization label and spanner-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text= "@string/organization"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <Spinner
+            android:id="@+id/orgSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:maxWidth="320dp"/>
+
+        <Button
+            android:id="@+id/registerButton"
+            android:text="@string/register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

@@ -18,4 +18,35 @@
     <string name="hint_enter_email">Enter your Email</string>
     <string name="hint_enter_password">Enter Password</string>
     <string name="error_empty_field">Email and password cannot be empty</string>
+    <string name="announcements">Announcements</string>
+    <string name="password_no_match">Password do not match</string>
+    <string name="empty_registration_fields">Please enter missing fields</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="register">Register</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="organization">Organization</string>
+    <string name="enter_your_first_name">Enter your first name</string>
+    <string name="juan">Juan</string>
+    <string name="martinez">Martinez</string>
+    <string name="email_domain">email@domain</string>
+    <string name="hash">******</string>
+    <string name="conform_password">Conform Password</string>
+    <string name="or_sign_in_with_email">Or sign in with email</string>
+    <string name="complete_your_profile">Complete Your Profile</string>
+    <string name="save_and_continue">Save and Continue</string>
+    <string-array name="organizations">
+        <item>Elders Quorum</item>
+        <item>Relief Society</item>
+        <item>Primary</item>
+        <item>Bishopric</item>
+        <item>Sunday School</item>
+        <item>Missionary Work</item>
+        <item>Family History</item>
+    </string-array>
+    <string name="default_web_client_id">262098687337-vt01o8jr1vlhl2s3oev2gp299d5bf4lj.apps.googleusercontent.com</string>
+    <string name="add_announcement">Add Announcement</string>
+    <string name="announcements_for">Announcements for: %1$s</string>
 </resources>
+

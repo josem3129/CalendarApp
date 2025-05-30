@@ -7,12 +7,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:262098687337:android:56e033e6718e33dcea99f8",
+        "mobilesdk_app_id": "1:262098687337:android:4935f8fc71370a5cea99f8",
         "android_client_info": {
           "package_name": "com.example.calendarApp"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "262098687337-si4ckuo1shb0upng41i9l5cdv4c5vaa0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.calendarApp",
+            "certificate_hash": "5add63458ef5ec8f8bfef36702055e288d9592f9"
+          }
+        },
         {
           "client_id": "262098687337-vt01o8jr1vlhl2s3oev2gp299d5bf4lj.apps.googleusercontent.com",
           "client_type": 3

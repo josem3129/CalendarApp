@@ -6,6 +6,20 @@
     android:gravity="center"
     android:padding="16dp">
 
+    <!--Google sign-in-->
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/googleSignInButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxWidth="320dp" />
+    <!--Login liable for Google-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textSize="20sp"
+        android:text="@string/or_sign_in_with_email"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
     <!-- Email Label -->
     <TextView
         android:layout_width="match_parent"
@@ -61,5 +75,7 @@
         android:layout_height="wrap_content"
         android:maxWidth="320dp"
         android:text="@string/label_register"/>
+
+
 
 </LinearLayout>

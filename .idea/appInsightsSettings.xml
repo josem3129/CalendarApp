@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AppInsightsSettings">
+    <option name="selectedTabId" value="Android Vitals" />
     <option name="tabSettings">
       <map>
         <entry key="Firebase Crashlytics">
@@ -9,7 +10,7 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.example.calendarApp" />
-                  <option name="mobileSdkAppId" value="1:262098687337:android:56e033e6718e33dcea99f8" />
+                  <option name="mobileSdkAppId" value="1:262098687337:android:4935f8fc71370a5cea99f8" />
                   <option name="projectId" value="church-calendar-barrio-14" />
                   <option name="projectNumber" value="262098687337" />
                 </ConnectionSetting>

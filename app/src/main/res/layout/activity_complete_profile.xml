@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--view is able to scroll up or down-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--    Layout that holds form for profile-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+<!--        label on top of form-->
+        <TextView
+            android:text="@string/complete_your_profile"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!--First name lable and field-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text= "@string/first_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <EditText android:id="@+id/firstNameField"
+            android:hint="@string/juan"
+            android:inputType="textPersonName"
+            android:autofillHints="@string/juan"
+            android:minHeight="48dp"
+            android:maxWidth="320dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!---Last name label and field-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text= "@string/last_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <EditText android:id="@+id/lastNameField"
+            android:hint="@string/martinez"
+            android:inputType="textPersonName"
+            android:autofillHints="@string/martinez"
+            android:minHeight="48dp"
+            android:maxWidth="320dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--Organization label and field-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text= "@string/organization"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+<!--        dropped down menu to select what organisation you belong to-->
+        <Spinner
+            android:id="@+id/orgSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:maxWidth="320dp"/>
+
+<!--        save button-->
+        <Button
+            android:id="@+id/saveProfileButton"
+            android:text="@string/save_and_continue"
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

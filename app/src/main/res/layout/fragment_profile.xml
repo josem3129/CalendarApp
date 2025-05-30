@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    android:orientation="vertical">
+<!--    Layout for fragment profile and list of announcement for the user-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userAnnouncementsList"
+        android:layout_width="match_parent"
+        android:layout_height="269dp" />
+</LinearLayout>
