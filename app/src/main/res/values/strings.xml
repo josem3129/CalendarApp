@@ -5,7 +5,7 @@
     <string name="label_login">Login</string>
     <string name="label_register">Register</string>
     <string name="empty_fields">Please enter email and password</string>
-    <string name="error_registration_failed">Registration failed: %s</string>
+    <string name="error_registration_failed">Registration failed:</string>
     <string name="error_login_failed">Login failed</string>
     <string name="error_email_already_registered">This email is already registered. Try logging in instead.</string>
     <string name="error_invalid_email">Invalid email address</string>"
@@ -13,8 +13,8 @@
     <string name="error_password_mismatch">Passwords do not match</string>
     <string name="success_registration">Registration successful</string>
     <string name="success_login">Login successful</string>
-    <string name="error_firebase_auth">Firebase Authentication Error: %s</string>"
-    <string name="error_firebase_firestore">Firebase Firestore Error: %s</string>
+    <string name="error_firebase_auth">Firebase Authentication Error:</string>"
+    <string name="error_firebase_firestore">Firebase Firestore Error:</string>
     <string name="hint_enter_email">Enter your Email</string>
     <string name="hint_enter_password">Enter Password</string>
     <string name="error_empty_field">Email and password cannot be empty</string>
@@ -47,6 +47,10 @@
     </string-array>
     <string name="default_web_client_id">262098687337-vt01o8jr1vlhl2s3oev2gp299d5bf4lj.apps.googleusercontent.com</string>
     <string name="add_announcement">Add Announcement</string>
-    <string name="announcements_for">Announcements for: %1$s</string>
+    <string name="announcements_for">Announcements for:</string>
+    <string name="user_information">User Information</string>
+    <string name="username">Username</string>
+    <string name="my_announcements">My announcements</string>
+    <string name="save_changes">Save Changes</string>
 </resources>
 

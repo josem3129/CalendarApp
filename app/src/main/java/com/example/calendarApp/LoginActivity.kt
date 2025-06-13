@@ -113,7 +113,7 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this@LoginActivity, "@String/error_login_failed", Toast.LENGTH_SHORT).show()}
     }
 
-
+    // registerUpdate is called when the user clicks the register button.
     private fun registerUpdate() {
         val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)

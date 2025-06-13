@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         db = FirebaseFirestore.getInstance()
         recyclerView = findViewById(R.id.announcementList)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = AnnouncementAdapter(announcements)
+//        adapter = AnnouncementAdapter(announcements)
         recyclerView.adapter = adapter
 
 

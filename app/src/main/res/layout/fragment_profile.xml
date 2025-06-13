@@ -5,9 +5,67 @@
     android:layout_height="match_parent"
     android:padding="40dp"
     android:orientation="vertical">
+
+<!--    user information to be displayed and edit-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/user_information"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text= "@string/username"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+    <EditText android:id="@+id/userName"
+        android:textSize="18sp"
+        android:enabled="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text= "@string/label_email"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+    <EditText android:id="@+id/userEmail"
+        android:textSize="16sp"
+        android:enabled="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text= "@string/organization"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+    <Spinner
+        android:id="@+id/organizationSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/saveButton"
+        android:text="@string/save_changes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/my_announcements"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"/>
 <!--    Layout for fragment profile and list of announcement for the user-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/userAnnouncementsList"
         android:layout_width="match_parent"
-        android:layout_height="269dp" />
+        android:layout_height="301dp"
+        android:layout_marginTop="5dp" />
 </LinearLayout>
